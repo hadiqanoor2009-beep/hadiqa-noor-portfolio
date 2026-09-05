@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hadiqa-noor-portfolio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hadiqa-noor-portfolio
+  template:
+    metadata:
+      labels:
+        app: hadiqa-noor-portfolio
+    spec:
+      containers:
+        - name: portfolio
+          image: hadiqa-noor-portfolio:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
